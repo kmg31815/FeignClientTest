@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "be531c40-a48b-407f-ae31-3f5e768093f4",
+		"name": "Kong_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20002738"
+	},
+	"item": [
+		{
+			"name": "鼎盛kong產JWT憑證",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://kong-api.app-cluster.fstop.com.tw/consumers/jwt123/jwt",
+					"protocol": "http",
+					"host": [
+						"kong-api",
+						"app-cluster",
+						"fstop",
+						"com",
+						"tw"
+					],
+					"path": [
+						"consumers",
+						"jwt123",
+						"jwt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "鼎盛kong test",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "zh-TW",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Charset",
+						"value": "utf-8",
+						"type": "text"
+					},
+					{
+						"key": "x-core-guid",
+						"value": "21EC2020-3AEA-1069-A2DD-08002B30309D",
+						"type": "text"
+					},
+					{
+						"key": "x-core-channel",
+						"value": "etab",
+						"type": "text"
+					},
+					{
+						"key": "x-core-timestamp",
+						"value": "2022-09-01T10:01:400480",
+						"type": "text"
+					},
+					{
+						"key": "x-core-txid",
+						"value": "1921681110",
+						"type": "text"
+					},
+					{
+						"key": "x-core-traceid",
+						"value": "111111111",
+						"type": "text"
+					},
+					{
+						"key": "x-core-msg-type",
+						"value": "111111111",
+						"type": "text"
+					},
+					{
+						"key": "x-core-uid",
+						"value": "etab1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzE4NjE1ODcsImtvbmdfaXNzX2tleSI6IjR3SzNabFZPUXpac0xNQ0xuWGRmdGNJcGVha296SlNYIn0.W1OafNb_jz32NxenvPhlQOdTiy2xHNjapn9sdIy797A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transactionId\": \"1921681110\",\r\n  \"sourceId\": \"etab\",\r\n  \"txId\": \"S311\",\r\n  \"prefix\": \"I\",\r\n  \"clientIp\": \"192.168.11.10\",\r\n  \"trmId\": \"AA2S\",\r\n  \"branchNo\": \"147\",\r\n  \"branchId\": \"AA\",\r\n  \"opId\": \"AA05\",\r\n  \"empId\": \"991111\",\r\n  \"auxEmpId\": \"881111\",\r\n  \"mediaTranStatus\": \"\",\r\n  \"mediaOccur\": \"\",\r\n  \"clientRequest\": {\r\n    \"processMode\": \"I\",\r\n    \"fxNo\": \"0000000001\"\r\n  }\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.109.190.16:8000/api/fir/etab/s311/i/v1",
+					"protocol": "http",
+					"host": [
+						"10",
+						"109",
+						"190",
+						"16"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"fir",
+						"etab",
+						"s311",
+						"i",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "本機kong產JWT憑證",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8001/consumers/user123/jwt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"consumers",
+						"user123",
+						"jwt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "本機kong產JWT憑證(RSA)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "rsa_public_key",
+							"type": "file",
+							"src": "/C:/Users/USER/public.pem"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8001/consumers/user123/jwt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"consumers",
+						"user123",
+						"jwt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "透過@FeignClient打admin api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/test/user123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test",
+						"user123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "本機kong test",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzE4NjE1ODcsImlzc19rb25nIjoiUzBndm9McnBHUGZ2WUtSVnV1aHV3ZWpKU0s0bFp6V1AifQ.Hk0DcdAeZv8ZsvnhDIQRKF-WJhknMtfSniWN5wkdDyw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/route/apikey/retrive_all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"route",
+						"apikey",
+						"retrive_all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "本機kong test2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/route_no_auth/apikey/retrive_all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"route_no_auth",
+						"apikey",
+						"retrive_all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8001/consumers/user123/jwt",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/consumers/user123/jwt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"consumers",
+						"user123",
+						"jwt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8001/jwts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/jwts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"jwts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin apis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/endpoints",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"endpoints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8001/services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/services",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8001/routes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/routes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8001/consumers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/consumers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"consumers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8001/certificates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/certificates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"certificates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8001/ca_certificates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/ca_certificates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"ca_certificates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8001/keys",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/keys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"keys"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
